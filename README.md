@@ -3,13 +3,16 @@ Tech Stocks Price Model
 
 An example model using Ship Data Science for monitoring.
 
-This model uses a few months of stock history after the stock split in March 2014  as training data, and makes naive predictions 
-about the daily closing price of Google stock based on the last few day's closing prices for Apple, Google, and Microsoft.
+This model makes naive predictions
+about the daily closing price of Google stock based on 
+the last few day's closing prices for itself and a few competitors.
 
 Click on the below status badges to see detailed monitoring reports.
 
-Check out the Github issues section of this repository to see the automatically generated action items 
-suggested by Ship Data Science, providing warnings when the data is changing and the model needs adjustment.
+Check out the Github issues section of this repository.
+ One of the coolest features of Ship Data Science is the ability to automatically push Github issues 
+when monitoring detects important changes in the data or model's performance, enabling transparent, data-based
+discussion, analysis, and prioritization of issues.
 
 Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)
 
