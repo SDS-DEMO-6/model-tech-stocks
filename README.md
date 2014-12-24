@@ -18,14 +18,33 @@ Monitoring Status Badges
 
 How it works
 -----------
-Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just:
-
- - Write a scoring script that takes in file and out file parameters, that writes a scored data set to file.
- - Write a Dockerfile that runs your script.
- - Choose a data source and include it in your .shipit.json
- - Select monitoring plugins to run and include their info in .shipit.json
- - (Optionally) Select a frequency to run monitoring.
-
-
+Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just write a .shipit.json file and connect your repository on ShipDataScience.com. Example:
+```
+{
+  "scheduler" : {
+    "runEveryTimeIncrement" : "month",
+    "runOnCodeChange" : true
+  },
+  "data" : {
+    "cloneUrl" : "git@github.com:shipDataScience/data-copy-paste.git",
+    "repositoryBranch" : "master",
+    "config": {
+      "printMeOut" : "Hi! This is a test."
+    }
+  },
+  "scoring" : {
+    "skipScoring" : False,
+    "config" : {}
+  },
+  "plugins" : [
+    {
+      "alias" : "two-class validity",
+      "cloneUrl" : "git@github.com:shipDataScience/Stability-Monitoring.git",
+      "repositoryBranch" : "master",
+      "config": {}
+    }
+  ]
+}
+```
 
 
