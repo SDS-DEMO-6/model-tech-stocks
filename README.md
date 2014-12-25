@@ -5,7 +5,8 @@ An example model using Ship Data Science for monitoring.
 
 This model makes naive predictions
 about the daily closing price of Google stock based on 
-the last few day's closing prices for itself and a few competitors.
+the last few day's closing prices for a commodities fund
+and a NASDAQ-tracking fund.
 
 Click on the below status badges to see detailed monitoring reports.
 
