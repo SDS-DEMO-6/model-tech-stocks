@@ -13,7 +13,7 @@
     }
   },
   "scoring" : {
-    "skipScoring" : False
+    "skipScoring" : false
   },
   "plugins" : [
     {
