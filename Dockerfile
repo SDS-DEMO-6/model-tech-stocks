@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # compilers and basic tools
-RUN apt-get install -y gfortran build-essential make gcc build-essential git-core curl wget vim-tiny nano
+RUN apt-get install -y gfortran make gcc git-core curl wget vim-tiny nano
 
 # install python
 ADD repo.sh /tmp/repo.sh
