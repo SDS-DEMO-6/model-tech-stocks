@@ -1,8 +1,9 @@
 import pandas
 import os
+import json
 
-data_file_path=""
-out_file_path=""
+data_file_path= json.loads(os.environ["SDS_PLUGIN_CONFIG_JSON"])["reserved"]["dataFilePath"]
+out_file_path=json.loads(os.environ["SDS_PLUGIN_CONFIG_JSON"])["reserved"]["outFilePath"]
 
 data = pandas.read_csv(data_file_path, sep="\t")
 
