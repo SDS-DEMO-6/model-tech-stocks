@@ -12,7 +12,7 @@ RUN apt-get install -y python2.7 python2.7-dev
 
 # database client
 # sqllite, postgresql, mysql client
-RUN apt-get install -y libsqlite3-dev sqlite3 postgresql-client-9.1 postgresql-client-common libpq5 libpq-dev libmysqlclient-dev
+RUN apt-get install -y libsqlite3-dev sqlite3 postgresql-client postgresql-client-common libpq5 libpq-dev libmysqlclient-dev
 
 # needed for httplib2
 RUN apt-get install -y libxml2-dev libxslt-dev
