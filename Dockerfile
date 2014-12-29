@@ -25,5 +25,5 @@ RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py; python get-p
 
 ONBUILD RUN pip install -r requirements.txt
 
-CMD [ "python", "main.py" ]
+CMD [ "python2.7", "main.py" ]
 
