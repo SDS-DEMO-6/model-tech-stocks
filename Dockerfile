@@ -1,6 +1,5 @@
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 
@@ -8,9 +7,6 @@ RUN apt-get upgrade -y
 RUN apt-get install -y gfortran make gcc git-core curl wget vim-tiny nano
 
 # install python
-ADD repo.sh /tmp/repo.sh
-ADD fkrull-deadsnakes-precise.list /tmp/fkrull-deadsnakes-precise.list
-RUN chmod 755 /tmp/repo.sh; /tmp/repo.sh
 RUN apt-get update
 RUN apt-get install -y python2.7 python2.7-dev
 
