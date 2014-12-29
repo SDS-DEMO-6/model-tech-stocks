@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # compilers and basic tools
-RUN apt-get install -y gfortran make gcc git-core curl wget 
+RUN apt-get install -y gfortran make gcc git-core build-essential curl wget 
 
 # install python
 RUN apt-get update
