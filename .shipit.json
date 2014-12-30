@@ -30,7 +30,7 @@
         },
         "report": {
           "period" : {
-            "period_field" : "date",
+            "period_field" : "Date",
             "period_type" : "time",
             "period_interval" : "30 day",
             "benchmark_starts_at" : "2012-04-01",
