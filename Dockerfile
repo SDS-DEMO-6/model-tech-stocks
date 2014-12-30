@@ -26,7 +26,7 @@ RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py; python get-p
 ADD . /code
 WORKDIR /code
 
-ONBUILD RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD [ "python2.7", "main.py" ]
 
