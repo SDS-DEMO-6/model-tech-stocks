@@ -23,6 +23,9 @@ RUN wget http://python-distribute.org/distribute_setup.py; python distribute_set
 # pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py; python get-pip.py; rm -f /get-pip.py
 
+ADD . /code
+WORKDIR /code
+
 ONBUILD RUN pip install -r requirements.txt
 
 CMD [ "python2.7", "main.py" ]
