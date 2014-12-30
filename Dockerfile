@@ -21,7 +21,7 @@ RUN apt-get install -y libxml2-dev libxslt-dev
 RUN wget http://python-distribute.org/distribute_setup.py; python distribute_setup.py; rm -f /distribute*
 
 # pip
-# RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py; python get-pip.py; rm -f /get-pip.py
+RUN wget  https://bootstrap.pypa.io/get-pip.py; python2.7 get-pip.py; rm -f /get-pip.py
 
 ADD . /code
 WORKDIR /code
