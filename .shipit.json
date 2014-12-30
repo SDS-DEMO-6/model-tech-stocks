@@ -28,6 +28,9 @@
             "sep" : "\t"
           }
         },
+        "logging" : {
+          "log_level" : "DEBUG"
+        },
         "report": {
           "period" : {
             "period_field" : "Date",
