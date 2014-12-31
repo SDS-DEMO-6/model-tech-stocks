@@ -36,9 +36,9 @@
             "period_field" : "Date",
             "period_type" : "time",
             "period_interval" : "30 day",
-            "benchmark_starts_at" : "2012-04-01",
-            "benchmark_ends_at" : "2012-08-01",
-            "report_starts_at" : "2012-08-01"
+            "benchmark_starts_at" : "2014-04-01",
+            "benchmark_ends_at" : "2014-08-01",
+            "report_starts_at" : "2014-08-01"
           },
           "fields" : {
             "included" : ["GOOG", "DBC", "QQQ"]
