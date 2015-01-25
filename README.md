@@ -32,19 +32,50 @@ Integrating a model with Ship Data Science monitoring is designed to be an excep
     "runOnCodeChange" : true
   },
   "data" : {
-    "cloneUrl" : "git@github.com:shipDataScience/data-copy-paste.git",
-    "repositoryBranch" : "master",
-    "config": {}
+    "ownerGithubUsername" : "shipDataScience",
+    "repositoryName" : "data-yahoo-finance",
+    "config" : {
+      "tickers" : ["GOOG", "DBC", "QQQ"], 
+      "lags" : [1,3,5],
+      "startDate" : "2014-04-01"
+    }
   },
   "scoring" : {
-    "skipScoring" : False,
+    "skipScoring" : false
   },
   "plugins" : [
     {
-      "alias" : "two-class validity",
-      "cloneUrl" : "git@github.com:shipDataScience/Stability-Monitoring.git",
+      "alias" : "Stability",
+      "ownerGithubUsername" : "shipDataScience",
+      "repositoryName" : "Stability-Monitoring",
       "repositoryBranch" : "master",
-      "config": {}
+      "config": {
+        "io" : {
+          "strategy" : {
+            "identifier" : "CSV",
+            "sep" : "\t"
+          }
+        },
+        "logging" : {
+          "log_level" : "DEBUG"
+        },
+        "report": {
+          "period" : {
+            "period_field" : "Date",
+            "period_type" : "time",
+            "period_interval" : "30 day",
+            "benchmark_starts_at" : "2014-04-01",
+            "benchmark_ends_at" : "2014-08-01",
+            "report_starts_at" : "2014-08-01"
+          },
+          "fields" : {
+            "included" : ["GOOG", "DBC", "QQQ"]
+          },
+          "quantiles": {
+             "default" : 5
+          }
+        } 
+      }
     }
   ]
 }
