@@ -19,7 +19,7 @@ Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)
 
 Monitoring Status Badges
 --------------------
-![Status Badge for Stability ](http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1 "Stability")  Stability Monitoring
+[![Status Badge for Stability ](http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1 "Stability") Stability Monitoring](http://staging.shipdatascience.com/api/v1/report_summary?statsmodel_id=1&plugin_id=1)
 
 
 How it works
