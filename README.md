@@ -15,7 +15,7 @@ Check out the Github issues section of this repository.
 when monitoring detects important changes in the data or model's performance, enabling transparent, data-based
 discussion, analysis, and prioritization of issues.
 
-Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com) 
+Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)  
 
 Monitoring Status Badges
 --------------------
