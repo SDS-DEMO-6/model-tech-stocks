@@ -22,6 +22,7 @@ Monitoring Status Badges
 [![Status Badge for Stability ](http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1 "Stability") Stability Monitoring](http://staging.shipdatascience.com/api/v1/report_summary?statsmodel_id=1&plugin_id=1)
 
 
+
 How it works
 -----------
 Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just write a .shipit.json file and connect your repository on ShipDataScience.com. Example:
