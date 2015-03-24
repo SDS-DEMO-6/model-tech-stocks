@@ -59,7 +59,7 @@ Integrating a model with Ship Data Science monitoring is designed to be an excep
           }
         },
         "logging" : {
-          "log_level" : "DEBUG"
+          "logLevel" : "INFO"
         },
         "report": {
           "period" : {
