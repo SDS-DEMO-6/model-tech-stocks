@@ -10,21 +10,23 @@ and a NASDAQ-tracking fund.
 
 Click on the below status badges to see detailed monitoring reports.
 
-Check out the Github issues section of this repository.
- One of the coolest features of Ship Data Science is the ability to automatically push Github issues 
+Ship Data Science can automatically push Github issues 
 when monitoring detects important changes in the data or model's performance, enabling transparent, data-based
-discussion, analysis, and prioritization of issues.
+discussion, analysis, and prioritization of issues. Check out the issues section for examples.
 
 Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)  
 
 Monitoring Status Badges
 --------------------
-[![Status Badge for Stability ](http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1 "Stability") Stability Monitoring](http://staging.shipdatascience.com/api/v1/report_summary?statsmodel_id=1&plugin_id=1)
-
+[ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/1 ) 
 
 How it works
 -----------
-Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just write a .shipit.json file and connect your repository on ShipDataScience.com. Example:
+Integrating a model with Ship Data Science monitoring is easy. Just write a .shipit.json file and connect your repository on ShipDataScience.com. 
+
+Each monitoring module you add is just another entry in the 'plugins' list. Guides for choosing options for each plugin and more are available on the ShipDataScience website.
+
+Example:
 ```
 {
   "data" : {
