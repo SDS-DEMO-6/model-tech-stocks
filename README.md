@@ -27,13 +27,12 @@ How it works
 Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just write a .shipit.json file and connect your repository on ShipDataScience.com. Example:
 ```
 {
-  "scheduler" : {
-    "runEveryTimeIncrement" : "month",
-    "runOnCodeChange" : true
-  },
   "data" : {
-    "ownerGithubUsername" : "shipDataScience",
-    "repositoryName" : "data-yahoo-finance",
+    "module" : {
+      "repositoryOwner" : "shipDataScience",
+      "repositoryName" : "data-yahoo-finance", 
+      "repositoryBranch" : "master"
+    },
     "config" : {
       "tickers" : ["GOOG", "DBC", "QQQ"], 
       "lags" : [1,3,5],
@@ -45,15 +44,18 @@ Integrating a model with Ship Data Science monitoring is designed to be an excep
   },
   "plugins" : [
     {
-      "alias" : "Stability",
-      "ownerGithubUsername" : "shipDataScience",
-      "repositoryName" : "Stability-Monitoring",
-      "repositoryBranch" : "master",
+      "module" : {
+        "repositoryOwner" : "shipDataScience",
+        "repositoryName" : "Stability-Monitoring",
+        "repositoryBranch" : "master"
+      },
       "config": {
         "io" : {
           "strategy" : {
             "identifier" : "CSV",
-            "sep" : "\t"
+            "options" : {
+              "sep" : "\t"
+            }
           }
         },
         "logging" : {
@@ -61,24 +63,34 @@ Integrating a model with Ship Data Science monitoring is designed to be an excep
         },
         "report": {
           "period" : {
-            "period_field" : "Date",
-            "period_type" : "time",
-            "period_interval" : "30 day",
-            "benchmark_starts_at" : "2014-04-01",
-            "benchmark_ends_at" : "2014-08-01",
-            "report_starts_at" : "2014-08-01"
+            "field" : "Date",
+            "type" : "datetime",
+            "benchmark" : {
+              "startsAt" : "2014-04-01",
+              "endsAt" : "2014-08-01"
+            },
+            "report" : {
+              "startsAt" : "2014-08-01",
+              "window" : {
+                "type" : "calendar",
+                "interval" : "monthly"
+              },
+              "discardLastPeriod" : true
+            }
           },
           "fields" : {
             "included" : ["GOOG", "DBC", "QQQ"]
           },
           "quantiles": {
-             "default" : 5
+            "defaultNumberOfTiles" : 3
           }
-        } 
+        }
       }
     }
   ]
 }
+
+
 ```
 
 
