@@ -31,7 +31,7 @@
           }
         },
         "logging" : {
-          "log_level" : "DEBUG"
+          "logLevel" : "DEBUG"
         },
         "report": {
           "period" : {
@@ -55,6 +55,61 @@
           },
           "quantiles": {
             "defaultNumberOfTiles" : 3
+          }
+        }
+      }
+    },
+    {
+      "module" : {
+        "repositoryOwner" : "shipDataScience",
+        "repositoryName" : "Validity-Monitoring",
+        "repositoryBranch" : "master"
+      },
+      "config": {
+        "io" : {
+          "strategy" : {
+            "identifier" : "CSV",
+            "options" : {
+              "sep" : "\t"
+            }
+          }
+        },
+        "logging" : {
+          "logLevel" : "DEBUG"
+        },
+        "report": {
+          "period" : {
+            "field" : "Date",
+            "type" : "datetime",
+            "benchmark" : {
+              "startsAt" : "2014-04-01",
+              "endsAt" : "2014-08-01"
+            },
+            "report" : {
+              "startsAt" : "2014-08-01",
+              "window" : {
+                "type" : "calendar",
+                "interval" : "monthly"
+              },
+              "discardLastPeriod" : true
+            }
+          },
+          "fields" : {
+            "included" : ["DBC", "QQQ"],
+            "score" : "score",
+            "target" : "GOOG"
+          },
+          "quantiles": {
+            "defaultNumberOfTiles" : 3
+          },
+          "validity" : {
+            "modelType" : "regression",
+            "goodness" : {
+              "metric" : "pearson"
+            },
+            "residuals" : {
+              "metrics" : ["MAE", "MSE", "AE"]
+            }
           }
         }
       }
