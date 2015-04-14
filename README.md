@@ -10,30 +10,31 @@ and a NASDAQ-tracking fund.
 
 Click on the below status badges to see detailed monitoring reports.
 
-Check out the Github issues section of this repository.
- One of the coolest features of Ship Data Science is the ability to automatically push Github issues 
+Ship Data Science can automatically push Github issues 
 when monitoring detects important changes in the data or model's performance, enabling transparent, data-based
-discussion, analysis, and prioritization of issues.
+discussion, analysis, and prioritization of issues. Check out the issues section for examples.
 
 Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)  
 
 Monitoring Status Badges
 --------------------
-[![Status Badge for Stability ](http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1 "Stability") Stability Monitoring](http://staging.shipdatascience.com/api/v1/report_summary?statsmodel_id=1&plugin_id=1)
-
+[ <img src="http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://staging.shipdatascience.com/app#!/latest/1/master/1 ) 
 
 How it works
 -----------
-Integrating a model with Ship Data Science monitoring is designed to be an exceptionally lightweight effort. Just write a .shipit.json file and connect your repository on ShipDataScience.com. Example:
+Integrating a model with Ship Data Science monitoring is easy. Just write a .shipit.json file and connect your repository on ShipDataScience.com. 
+
+Each monitoring module you add is just another entry in the 'plugins' list. Guides for choosing options for each plugin and more are available on the ShipDataScience website.
+
+Example:
 ```
 {
-  "scheduler" : {
-    "runEveryTimeIncrement" : "month",
-    "runOnCodeChange" : true
-  },
   "data" : {
-    "ownerGithubUsername" : "shipDataScience",
-    "repositoryName" : "data-yahoo-finance",
+    "module" : {
+      "repositoryOwner" : "shipDataScience",
+      "repositoryName" : "data-yahoo-finance", 
+      "repositoryBranch" : "master"
+    },
     "config" : {
       "tickers" : ["GOOG", "DBC", "QQQ"], 
       "lags" : [1,3,5],
@@ -45,40 +46,53 @@ Integrating a model with Ship Data Science monitoring is designed to be an excep
   },
   "plugins" : [
     {
-      "alias" : "Stability",
-      "ownerGithubUsername" : "shipDataScience",
-      "repositoryName" : "Stability-Monitoring",
-      "repositoryBranch" : "master",
+      "module" : {
+        "repositoryOwner" : "shipDataScience",
+        "repositoryName" : "Stability-Monitoring",
+        "repositoryBranch" : "master"
+      },
       "config": {
         "io" : {
           "strategy" : {
             "identifier" : "CSV",
-            "sep" : "\t"
+            "options" : {
+              "sep" : "\t"
+            }
           }
         },
         "logging" : {
-          "log_level" : "DEBUG"
+          "logLevel" : "INFO"
         },
         "report": {
           "period" : {
-            "period_field" : "Date",
-            "period_type" : "time",
-            "period_interval" : "30 day",
-            "benchmark_starts_at" : "2014-04-01",
-            "benchmark_ends_at" : "2014-08-01",
-            "report_starts_at" : "2014-08-01"
+            "field" : "Date",
+            "type" : "datetime",
+            "benchmark" : {
+              "startsAt" : "2014-04-01",
+              "endsAt" : "2014-08-01"
+            },
+            "report" : {
+              "startsAt" : "2014-08-01",
+              "window" : {
+                "type" : "calendar",
+                "interval" : "monthly"
+              },
+              "discardLastPeriod" : true
+            }
           },
           "fields" : {
             "included" : ["GOOG", "DBC", "QQQ"]
           },
           "quantiles": {
-             "default" : 5
+            "defaultNumberOfTiles" : 3
           }
-        } 
+        }
       }
     }
   ]
 }
+
+
 ```
 
 
