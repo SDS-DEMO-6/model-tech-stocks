@@ -18,7 +18,7 @@ Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)
 
 Monitoring Status Badges
 --------------------
-[ <img src="http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://staging.shipdatascience.com/app#!/latest/1/master/1 ) 
+[ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/1 ) 
 
 How it works
 -----------
