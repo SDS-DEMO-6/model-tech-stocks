@@ -100,7 +100,8 @@
             "target" : "GOOG"
           },
           "quantiles": {
-            "defaultNumberOfTiles" : 3
+            "defaultNumberOfTiles" : 3,
+            "defaultAbsolutePadding" : 0.1
           },
           "validity" : {
             "modelType" : "regression",
@@ -109,6 +110,71 @@
             },
             "residuals" : {
               "metrics" : ["MAE", "MSE", "AE"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "module" : {
+        "repositoryOwner" : "shipDataScience",
+        "repositoryName" : "Residual-Monitoring",
+        "repositoryBranch" : "master"
+      },
+      "config": {
+        "io" : {
+          "strategy" : {
+            "identifier" : "CSV",
+            "options" : {
+              "sep" : "\t"
+            }
+          }
+        },
+        "logging" : {
+          "logLevel" : "DEBUG"
+        },
+        "report": {
+          "period" : {
+            "field" : "Date",
+            "type" : "datetime",
+            "benchmark" : {
+              "startsAt" : "2014-04-01",
+              "endsAt" : "2014-08-01"
+            },
+            "report" : {
+              "startsAt" : "2014-08-01",
+              "window" : {
+                "type" : "calendar",
+                "interval" : "monthly"
+              },
+              "discardLastPeriod" : true
+            }
+          },
+          "fields" : {
+            "included" : ["DBC", "QQQ"],
+            "score" : "score",
+            "target" : "GOOG"
+          },
+          "quantiles": {
+            "defaultNumberOfTiles" : 3,
+            "defaultAbsolutePadding" : 0.1
+          },
+          "validity" : {
+            "modelType" : "regression",
+            "goodness" : {
+              "metric" : "pearson"
+            },
+            "residuals" : {
+              "metrics" : ["MAE", "MSE", "AE"]
+            }
+          },
+          "residual" : {
+            "goodness" : {
+              "metric" : "pearson"
+            },
+            "model" : {
+              "depth" : 4,
+              "periods": 2
             }
           }
         }
