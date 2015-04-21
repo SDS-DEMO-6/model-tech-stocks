@@ -8,7 +8,7 @@ about the daily closing price of Google stock based on
 the last few day's closing prices for a commodities fund
 and a NASDAQ-tracking fund.
 
-Click on the below status badges to see detailed monitoring reports.
+Click on the below status badges to see detailed monitoring reports. 
 
 Ship Data Science can automatically push Github issues 
 when monitoring detects important changes in the data or model's performance, enabling transparent, data-based
@@ -18,11 +18,15 @@ Seem cool? Check out [Ship Data Science](http://www.shipdatascience.com)
 
 Monitoring Status Badges
 --------------------
-[ <img src="http://staging.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://staging.shipdatascience.com/app#!/latest/1/master/1 ) 
+[ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=1&statsmodel_id=1&branch=master" > shipDataScience / Stability-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/1 ) 
+
+[ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=2&statsmodel_id=1&branch=master" > shipDataScience / Validity-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/2 ) 
 
 How it works
 -----------
-Integrating a model with Ship Data Science monitoring is easy. Just write a .shipit.json file and connect your repository on ShipDataScience.com. 
+Integrating a model with Ship Data Science monitoring is pretty straightforward. Just click through our 
+[Configurator Wizard](http://configurator.shipdatascience.com) and commit the generated
+.shipit.json and Dockerfile files to your repository.
 
 Each monitoring module you add is just another entry in the 'plugins' list. Guides for choosing options for each plugin and more are available on the ShipDataScience website.
 
