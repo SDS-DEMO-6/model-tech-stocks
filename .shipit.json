@@ -174,7 +174,7 @@
             },
             "model" : {
               "depth" : 4,
-              "periods": 2
+              "periods": 1
             }
           }
         }
