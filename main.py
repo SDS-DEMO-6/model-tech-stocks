@@ -2,11 +2,10 @@ import pandas
 import os
 import json
 
-data_file_path= json.loads(os.environ["SDS_PLUGIN_CONFIG_JSON"])["reserved"]["dataFilePath"]
-out_file_path=json.loads(os.environ["SDS_PLUGIN_CONFIG_JSON"])["reserved"]["outFilePath"]
+data_file_path= os.environ["SDS_INPUT_PATH"]
+out_file_path=os.environ["SDS_OUTPUT_PATH"]
 
 data = pandas.read_csv(data_file_path, sep="\t")
-
 data.set_index(["Date"])
 
 data["score"] = (
