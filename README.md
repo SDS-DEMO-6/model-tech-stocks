@@ -22,6 +22,8 @@ Monitoring Status Badges
 
 [ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=2&statsmodel_id=1&branch=master" > shipDataScience / Validity-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/2 ) 
 
+[ <img src="http://www.shipdatascience.com/api/v1/badges?plugin_id=3&statsmodel_id=1&branch=master" > shipDataScience / Residual-Monitoring ](http://www.shipdatascience.com/app#!/latest/1/master/3 ) 
+
 How it works
 -----------
 Integrating a model with Ship Data Science monitoring is pretty straightforward. Just click through our 
