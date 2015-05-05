@@ -51,7 +51,7 @@
             }
           },
           "fields" : {
-            "included" : ["GOOG", "DBC", "QQQ"]
+            "included" : ["DBC_DIFF_2", "GOOG_DIFF_2", "QQQ_DIFF_2"]
           },
           "quantiles": {
             "defaultNumberOfTiles" : 3
@@ -95,7 +95,7 @@
             }
           },
           "fields" : {
-            "included" : ["DBC", "QQQ"],
+            "included" : ["DBC_DIFF_2", "QQQ_DIFF_2", "GOOG_DIFF_2" ],
             "score" : "score",
             "target" : "GOOG"
           },
@@ -151,7 +151,7 @@
             }
           },
           "fields" : {
-            "included" : ["DBC", "QQQ"],
+            "included" : ["DBC_DIFF_2", "QQQ_DIFF_2", "GOOG_DIFF_2" ],
             "score" : "score",
             "target" : "GOOG"
           },
@@ -165,7 +165,7 @@
               "metric" : "pearson"
             },
             "residuals" : {
-              "metrics" : ["MAE", "MSE", "AE"]
+              "metrics" : ["MAE",  "AE"]
             }
           },
           "residual" : {
